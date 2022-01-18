@@ -15,6 +15,7 @@ const container = new Container({
  * Register dependencies in DI environment.
  */
 container.bind<ILogger>(DependencyIdentifier.LOGGER).to(Logger);
-container.bind<CarOnSaleService>(CarOnSaleService).toSelf();
+container.bind<CarOnSaleService>(CarOnSaleService).toSelf(); 
+// I think we can use the direct class identifier then call toSelf() to get an instance of the class. But I think both of the above approach are fine.
 
 export default container;
