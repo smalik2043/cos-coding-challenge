@@ -3,6 +3,7 @@ import DIContainer from "./DiContainer";
 import { CarOnSaleService } from "../src/app/services/CarOnSaleClient/classes/CarOnSaleService";
 import { expect } from "chai";
 import { IAuctionBid } from "../src/app/services/CarOnSaleClient/interface/ICarOnSaleClient";
+import { CarOnSaleClientController } from "../src/app/controller/CarOnSaleClient/CarOnSaleClientController";
 
 const carOnSaleService: CarOnSaleService = DIContainer.resolve<CarOnSaleService>(CarOnSaleService);
 const testrunningAuctionFixture: IAuctionBid[] = [
@@ -22,10 +23,11 @@ const testrunningAuctionFixture: IAuctionBid[] = [
         deletedAt: '',
     }
 ]
-describe('getListOfRunningAuctions and testing dependency injection', () => {
+describe('getListOfRunningAuctionsFromController and testing dependency injection', () => {
 
   it('getListOfRunningAuctions()', async () => {
-    const runningAuctions: IAuctionBid[] = await carOnSaleService.getRunningAuctions();
+    const carOnSaleClientController = new CarOnSaleClientController(carOnSaleService);  
+    const runningAuctions: IAuctionBid[] = await carOnSaleClientController.getRunningAuctions();
     expect(runningAuctions).to.eql(testrunningAuctionFixture);
   })
 });

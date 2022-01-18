@@ -5,7 +5,7 @@ import { IAuctionBid, ICarOnSaleClient } from "../interface/ICarOnSaleClient";
 @injectable()
 export class CarOnSaleService implements ICarOnSaleClient {
 
-    async getRunningAuctions(): Promise<IAuctionBid[]> {
+    public async getRunningAuctions(): Promise<IAuctionBid[]> {
         return RunningAuctionFixtures;
     }
     
