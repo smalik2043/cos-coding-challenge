@@ -1,4 +1,4 @@
-import 'reflect-metadata';
+import "reflect-metadata";
 import container from "./DIContainer";
 import { AuctionMonitorApp } from "./AuctionMonitorApp";
 import { IAuctionBid } from "./services/CarOnSaleClient/interface/ICarOnSaleClient";
