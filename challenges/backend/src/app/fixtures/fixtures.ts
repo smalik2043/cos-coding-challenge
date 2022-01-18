@@ -13,8 +13,8 @@ export const RunningAuctionFixtures: IAuctionBid[] =
             _fk_uuid_auction: 'abc-245',
             _fk_uuid_biddingBuyer: 'abc-234',
             _fk_uuid_triggeringBuyer: 'abc-236',
-            createdAt: new Date().toString(),
-            updatedAt: new Date().toString(),
+            createdAt: '18/01/2022, 15:54:21',
+            updatedAt: '18/01/2022, 15:54:21',
             deletedAt: '',
         }
     ]
